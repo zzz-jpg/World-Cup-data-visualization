@@ -10,4 +10,4 @@ Drawing relevant data trends based on known historical World Cup data can be don
 
 4、Changes in audience size and television broadcasting channels: This can indicate trends in the growth of soccer fans worldwide, the development of television media, and changes in traditional viewing methods such as attending live matches.
 
-We use Vue、html、css、Javascript to complish this webpage.
+We use Vue、html、css、Javascript to complish this webpage.The final result is displayed is in "show.png".
