@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>世界杯数据可视化</title>
+    
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- 头部 -->
+    <header>
+      <a href="index copy.html"title="世界杯数据可视化-ECharts"target="top"><h1>世界杯数据可视化-ECharts</h1></a>
+      <div class="show-time"></div>
+      <script>
+        // 格式：当前时间：2022年5月3日-13时20分24秒
+        var t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".show-time").innerHTML = "当前时间：" + y + "年" + mt + "月" + day + "日-" + h + "时" + m + "分" + s + "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    </header>
+ 
+    <!-- 页面主体部分 -->
+    <section class="mainbox">
+      <!-- 左侧盒子 -->
+      <div class="column">
+        <div class="panel bar">
+          <h2>柱形图-夺冠次数总计</h2>
+          <!-- 图表放置盒子 -->
+          <div class="chart"></div>
+          <!-- 伪元素绘制盒子下边角 -->
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h2>折线图-观众人数变化
+            <!-- <a class="a-active" href="javascript:;">2020</a>
+            <a href="javascript:;">2021</a> -->
+          </h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+          <h2>饼形图-夺冠队伍所在大洲分布</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <!-- 中间盒子 -->
+      <div class="column">
+        <style scoped="">
+          html,
+          body {
+            margin: 0;
+            padding: 0;
+          }
+      
+          #echartsMap {
+            width: 1920px;
+            height: 1080px;
+            
+          }
+      
+          .map-wrapper {
+            background-color: #3c22d3a5;
+            display: flex;
+            width: 100%;
+            height: 90vh;
+            align-items: center;
+            justify-content: center;
+          }
+        </style>
+        <body>
+          <div class="map-wrapper">
+            <div id="echartsMap"></div>
+          </div>
+        </body>
+        
+      </div>
+      <!-- 右侧盒子 -->
+      <div class="column">
+        <div class="panel bar2">
+          <h2>柱状图-决赛队伍次数</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line2">
+          <h2>折线图-历年进球数</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie2">
+          <h2>饼形图-东道主夺冠概率</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+ 
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- 引入world.js 完成地图模块 -->
+    <script src="js/world.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
